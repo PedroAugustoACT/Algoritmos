@@ -1,5 +1,30 @@
 #include <stdio.h>
 
+void bubblesort(int array[], int numItens)
+{
+    int aux;
+
+    for (int i = 0; i < numItens; i++)
+    {
+        for (int j = 0; j < numItens - 1; j++)
+        {
+            if (array[j] > array[j + 1])
+            {
+                aux = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = aux;
+            }
+        }
+    }
+
+    printf("Ordenação: ");
+
+    for (int k = 0; k < numItens; k++)
+    {
+        printf("%i  ", array[k]);
+    }
+}
+
 int main()
 {
     int numItens;
@@ -22,27 +47,7 @@ int main()
 
     printf("\n");
 
-    int aux, i;
-
-    for (i = 0; i < numItens; i++)
-    {
-        for (int j = 0; j < numItens - 1; j++)
-        {
-            if (array[j] > array[j + 1])
-            {
-                aux = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = aux;
-            }
-        }
-    }
-
-    printf("Ordenação: ");
-
-    for (int k = 0; k < numItens; k++)
-    {
-        printf("%i  ", array[k]);
-    }
+    bubblesort(array, numItens);
 
     return 0;
 }
