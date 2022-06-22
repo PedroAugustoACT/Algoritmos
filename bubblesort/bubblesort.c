@@ -1,53 +1,50 @@
 #include <stdio.h>
 
-void bubblesort(int array[], int numItens)
-{
-    int aux;
-
-    for (int i = 0; i < numItens; i++)
-    {
-        for (int j = 0; j < numItens - 1; j++)
-        {
-            if (array[j] > array[j + 1])
-            {
-                aux = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = aux;
-            }
-        }
-    }
-
-    printf("Ordenação: ");
-
-    for (int k = 0; k < numItens; k++)
-    {
-        printf("%i  ", array[k]);
-    }
+void troca(int array[], int j) {
+  int aux;
+  aux = array[j];
+  array[j] = array[j + 1];
+  array[j + 1] = aux;
 }
 
-int main()
-{
-    int numItens;
+void bubblesort(int array[], int numItens) {
+  int aux;
 
-    printf("Digite o número de itens do vetor: ");
-    scanf("%i", &numItens);
-
-    int array[numItens];
-    for (int i = 0; i < numItens; i++)
-    {
-        printf("Digite o indice %i do vetor: ", i);
-        scanf("%i", &array[i]);
+  for (int i = 0; i < numItens; i++) {
+    for (int j = 0; j < numItens - 1; j++) {
+      if (array[j] > array[j + 1]) {
+        troca(array, j);
+      }
     }
+  }
 
-    printf("Vetor: ");
-    for (int j = 0; j < numItens; j++)
-    {
-        printf("%i  ", array[j]);
-    }
+  printf("Ordenação: ");
 
-    printf("\n");
+  for (int k = 0; k < numItens; k++) {
+    printf("%i  ", array[k]);
+  }
+}
 
-    bubblesort(array, numItens);
+int main() {
+  int numItens;
 
-    return 0;
+  printf("Digite o número de itens do vetor: ");
+  scanf("%i", &numItens);
+
+  int array[numItens];
+  for (int i = 0; i < numItens; i++) {
+    printf("Digite o indice %i do vetor: ", i);
+    scanf("%i", &array[i]);
+  }
+
+  printf("Vetor: ");
+  for (int j = 0; j < numItens; j++) {
+    printf("%i  ", array[j]);
+  }
+
+  printf("\n");
+
+  bubblesort(array, numItens);
+
+  return 0;
 }

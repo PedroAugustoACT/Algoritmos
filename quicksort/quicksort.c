@@ -1,29 +1,28 @@
 #include <stdio.h>
 
-void troca(int array[])
-{
-    /*NÃO ESTÁ PRONTO*/
-    int aux;
-    aux = array[j];
-    array[j] = array[j + 1];
-    array[j + 1] = aux;
+ void troca(int array[], int pivo)
+ {
+     int aux;
+     aux = array[pivo];
+     array[pivo] = array[pivo + 1];
+     array[pivo + 1] = aux;
+ }
+void quicksort(int array[], int medio) {
+ 
+
+  printf("Ordenação: ");
+
+  for (int k = 0; k < 8; k++) {
+    printf("%i  ", array[k]);
+  }
 }
-void quicksort(int array[])
-{
-    int pivo = 8 / 2;
 
-    if (array[pivo] > array[pivo + 1])
-    {
-        troca(array);
-    }
-}
+int main() {
 
-int main()
-{
+  int array[8] = {5, 3, 9, -4, 0, 10, 25, 7};
+  int medio = 8/2;
 
-    int array[8] = {5, 3, 9, -4, 0, 10, 25, 7};
+  quicksort(array, medio);
 
-    quicksort(array);
-
-    return 0;
+  return 0;
 }
